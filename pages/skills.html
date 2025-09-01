@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Muhammed Muneef</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">Muneef</span>
+                <span class="logo-dot">.</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/about.html" class="nav-link">About</a></li>
+                <li><a href="../pages/projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../pages/skills.html" class="nav-link active">Skills</a></li>
+                <li><a href="../pages/resume.html" class="nav-link">Resume</a></li>
+                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Skills Page -->
+    <main class="page-main">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1 class="page-title">My Skills</h1>
+                    <p class="page-subtitle">Technologies and expertise I've mastered</p>
+                    <button class="btn-primary add-skill-btn" onclick="openSkillModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>Add New Skill</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Skills Categories -->
+            <section class="skills-section">
+                <div class="skills-categories">
+                    <button class="category-btn active" data-category="all">All Skills</button>
+                    <button class="category-btn" data-category="frontend">Frontend</button>
+                    <button class="category-btn" data-category="backend">Backend</button>
+                    <button class="category-btn" data-category="mobile">Mobile</button>
+                    <button class="category-btn" data-category="tools">Tools</button>
+                    <button class="category-btn" data-category="other">Other</button>
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills will be dynamically loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Skill Modal -->
+    <div class="modal-overlay" id="skill-modal">
+        <div class="modal-content curved-border">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Skill</h2>
+                <button class="modal-close" onclick="closeSkillModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="skill-form" id="skill-form">
+                <div class="form-group">
+                    <label for="skill-name">Skill Name</label>
+                    <input type="text" id="skill-name" name="name" class="form-input curved-border" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="skill-description">Description</label>
+                    <textarea id="skill-description" name="description" class="form-textarea curved-border" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="skill-category">Category</label>
+                        <select id="skill-category" name="category" class="form-select curved-border" required>
+                            <option value="frontend">Frontend</option>
+                            <option value="backend">Backend</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="tools">Tools</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skill-level">Proficiency Level</label>
+                        <select id="skill-level" name="level" class="form-select curved-border" required>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="skill-icon">Icon</label>
+                    <select id="skill-icon" name="icon" class="form-select curved-border">
+                        <option value="fab fa-js-square">JavaScript</option>
+                        <option value="fab fa-react">React</option>
+                        <option value="fab fa-vue">Vue.js</option>
+                        <option value="fab fa-angular">Angular</option>
+                        <option value="fab fa-node-js">Node.js</option>
+                        <option value="fab fa-python">Python</option>
+                        <option value="fab fa-java">Java</option>
+                        <option value="fab fa-php">PHP</option>
+                        <option value="fab fa-laravel">Laravel</option>
+                        <option value="fab fa-swift">Swift</option>
+                        <option value="fab fa-android">Android</option>
+                        <option value="fab fa-apple">iOS</option>
+                        <option value="fab fa-html5">HTML5</option>
+                        <option value="fab fa-css3-alt">CSS3</option>
+                        <option value="fab fa-sass">Sass</option>
+                        <option value="fab fa-bootstrap">Bootstrap</option>
+                        <option value="fab fa-git-alt">Git</option>
+                        <option value="fab fa-github">GitHub</option>
+                        <option value="fab fa-docker">Docker</option>
+                        <option value="fab fa-aws">AWS</option>
+                        <option value="fas fa-database">Database</option>
+                        <option value="fas fa-code">Programming</option>
+                        <option value="fas fa-mobile-alt">Mobile</option>
+                        <option value="fas fa-server">Server</option>
+                        <option value="fas fa-cloud">Cloud</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeSkillModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <span id="submit-text">Add Skill</span>
+                        <i class="fas fa-save"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../assets/js/skills.js"></script>
+</body>
+</html>

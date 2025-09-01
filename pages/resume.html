@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Muhammed Muneef</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">Muneef</span>
+                <span class="logo-dot">.</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/about.html" class="nav-link">About</a></li>
+                <li><a href="../pages/projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../pages/skills.html" class="nav-link">Skills</a></li>
+                <li><a href="../pages/resume.html" class="nav-link active">Resume</a></li>
+                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Page -->
+    <main class="page-main">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1 class="page-title">My Resume</h1>
+                    <p class="page-subtitle">Professional experience and qualifications</p>
+                    <div class="header-actions">
+                        <button class="btn-primary" onclick="downloadResume()">
+                            <i class="fas fa-download"></i>
+                            <span>Download PDF</span>
+                        </button>
+                        <button class="btn-secondary" onclick="toggleEditMode()">
+                            <i class="fas fa-edit"></i>
+                            <span id="edit-btn-text">Edit Resume</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Content -->
+            <section class="resume-section">
+                <div class="resume-container curved-border">
+                    <!-- Personal Info -->
+                    <div class="resume-header curved-border" id="personal-info">
+                        <div class="personal-details">
+                            <h2 class="name" contenteditable="false" data-field="name">Muhammed Muneef</h2>
+                            <p class="title" contenteditable="false" data-field="title">Full Stack Developer</p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span contenteditable="false" data-field="email">md.muneefnk@gmail.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span contenteditable="false" data-field="phone">+91 9876543210</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span contenteditable="false" data-field="location">Kochi, Kerala, India</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span contenteditable="false" data-field="linkedin">linkedin.com/in/muneef</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="resume-section-block curved-border">
+                        <h3 class="section-title">
+                            <i class="fas fa-user"></i>
+                            Professional Summary
+                        </h3>
+                        <p class="summary-text" contenteditable="false" data-field="summary">
+                            Passionate Full Stack Developer with 2+ years of experience in creating innovative web and mobile applications. 
+                            Specialized in modern JavaScript frameworks, Python Django, and mobile app development for iOS and Android platforms. 
+                            Strong expertise in payment integration, Google Maps API, and building scalable solutions.
+                        </p>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="resume-section-block curved-border">
+                        <h3 class="section-title">
+                            <i class="fas fa-briefcase"></i>
+                            Work Experience
+                            <button class="add-btn" onclick="addExperience()" style="display: none;">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </h3>
+                        <div class="experience-list" id="experience-list">
+                            <!-- Experience items will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="resume-section-block curved-border">
+                        <h3 class="section-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Education
+                            <button class="add-btn" onclick="addEducation()" style="display: none;">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </h3>
+                        <div class="education-list" id="education-list">
+                            <!-- Education items will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <div class="resume-section-block curved-border">
+                        <h3 class="section-title">
+                            <i class="fas fa-code"></i>
+                            Technical Skills
+                        </h3>
+                        <div class="skills-categories-resume">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <div class="skill-tags" contenteditable="false" data-field="frontend-skills">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Vue.js</span>
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Backend</h4>
+                                <div class="skill-tags" contenteditable="false" data-field="backend-skills">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Django</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Express</span>
+                                    <span class="skill-tag">PostgreSQL</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Mobile</h4>
+                                <div class="skill-tags" contenteditable="false" data-field="mobile-skills">
+                                    <span class="skill-tag">Swift</span>
+                                    <span class="skill-tag">Kotlin</span>
+                                    <span class="skill-tag">React Native</span>
+                                    <span class="skill-tag">Flutter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="resume-section-block curved-border">
+                        <h3 class="section-title">
+                            <i class="fas fa-certificate"></i>
+                            Certifications
+                            <button class="add-btn" onclick="addCertification()" style="display: none;">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </h3>
+                        <div class="certifications-list" id="certifications-list">
+                            <!-- Certifications will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add/Edit Modals -->
+    <div class="modal-overlay" id="experience-modal">
+        <div class="modal-content curved-border">
+            <div class="modal-header">
+                <h2>Add Experience</h2>
+                <button class="modal-close" onclick="closeExperienceModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="experience-form" id="experience-form">
+                <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" name="title" class="form-input curved-border" required>
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" name="company" class="form-input curved-border" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="month" name="startDate" class="form-input curved-border" required>
+                    </div>
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input type="month" name="endDate" class="form-input curved-border">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="current"> Currently working here
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" class="form-textarea curved-border" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeExperienceModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../assets/js/resume.js"></script>
+</body>
+</html>

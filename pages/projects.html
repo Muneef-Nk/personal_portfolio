@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Muhammed Muneef</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">Muneef</span>
+                <span class="logo-dot">.</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/about.html" class="nav-link">About</a></li>
+                <li><a href="../pages/projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="../pages/skills.html" class="nav-link">Skills</a></li>
+                <li><a href="../pages/resume.html" class="nav-link">Resume</a></li>
+                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Page -->
+    <main class="page-main">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1 class="page-title">My Projects</h1>
+                    <p class="page-subtitle">Showcasing my latest work and creative solutions</p>
+                    <button class="btn-primary add-project-btn" onclick="openProjectModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>Add New Project</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Projects Grid -->
+            <section class="projects-section">
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be dynamically loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content curved-border">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Project</h2>
+                <button class="modal-close" onclick="closeProjectModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="project-form" id="project-form">
+                <div class="form-group">
+                    <label for="project-title">Project Title</label>
+                    <input type="text" id="project-title" name="title" class="form-input curved-border" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" name="description" class="form-textarea curved-border" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-technologies">Technologies (comma separated)</label>
+                    <input type="text" id="project-technologies" name="technologies" class="form-input curved-border" placeholder="React, Node.js, MongoDB" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-demo">Demo URL</label>
+                        <input type="url" id="project-demo" name="demo" class="form-input curved-border" placeholder="https://demo.example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-code">Code URL</label>
+                        <input type="url" id="project-code" name="code" class="form-input curved-border" placeholder="https://github.com/username/repo">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-image">Project Icon</label>
+                    <select id="project-image" name="image" class="form-select curved-border">
+                        <option value="fas fa-shopping-cart">E-Commerce</option>
+                        <option value="fas fa-tasks">Task Management</option>
+                        <option value="fas fa-chart-line">Analytics</option>
+                        <option value="fas fa-mobile-alt">Mobile App</option>
+                        <option value="fas fa-globe">Website</option>
+                        <option value="fas fa-gamepad">Game</option>
+                        <option value="fas fa-robot">AI/ML</option>
+                        <option value="fas fa-database">Database</option>
+                        <option value="fas fa-cloud">Cloud</option>
+                        <option value="fas fa-code">Code</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeProjectModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <span id="submit-text">Add Project</span>
+                        <i class="fas fa-save"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../assets/js/projects.js"></script>
+</body>
+</html>
