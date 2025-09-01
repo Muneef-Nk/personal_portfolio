@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muneef M - Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Glassmorphism Navigation -->
+    <nav class="glass-nav">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">Muneef</span>
+                <div class="logo-dot"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">Available for work</span>
+                    <div class="badge-dot"></div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Hi, I'm</span>
+                    <span class="title-name">Muneef M</span>
+                    <span class="title-cursor">|</span>
+                </h1>
+                <p class="hero-subtitle typing-text">I craft digital experiences</p>
+                <p class="hero-description">
+                    A passionate developer creating beautiful, functional, and user-centered digital experiences.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-glass primary">
+                        <span>Let's Connect</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn-glass secondary">
+                        <span>View Projects</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i class="fas fa-code"></i>
+                    <span>Frontend</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-server"></i>
+                    <span>Backend</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile</span>
+                </div>
+                <div class="hero-avatar">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-content">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-content glass-card">
+                    <div class="about-text">
+                        <h3>Passionate Developer</h3>
+                        <p>I'm a creative developer who loves building digital experiences that combine beautiful design with powerful functionality. My journey in tech has been driven by curiosity and a desire to solve real-world problems.</p>
+                        <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+                    <div class="resume-section">
+                        <a href="#" class="resume-btn" id="download-resume">
+                            <i class="fas fa-download"></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="100">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details glass-card">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="detail-content">
+                            <span class="detail-label">Name</span>
+                            <span class="detail-value">Muneef M</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="detail-content">
+                            <span class="detail-label">Email</span>
+                            <span class="detail-value">md.muneefnk@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="detail-content">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">Kochi, Kerala</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="detail-content">
+                            <span class="detail-label">Status</span>
+                            <span class="detail-value">Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section id="quotes" class="quotes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Inspiration</span>
+                <h2 class="section-title">Words That Drive Me</h2>
+            </div>
+            <div class="quote-container">
+                <div class="quote-card glass-intense" id="quote-display">
+                    <p class="quote-text">"The only way to do great work is to love what you do."</p>
+                    <p class="quote-author">- Steve Jobs</p>
+                </div>
+                <div class="quote-navigation">
+                    <button class="quote-nav-btn" id="prev-quote">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="quote-nav-btn" id="next-quote">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What I do</span>
+                <h2 class="section-title">Skills & Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <!-- Skills will be added dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-container">
+                <!-- Project cards will be added dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Let's work together</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">Ready to bring your ideas to life? Let's create something amazing together.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Me</h3>
+                        <p>md.muneefnk@gmail.com</p>
+                        <a href="mailto:md.muneefnk@gmail.com" class="contact-link">
+                            Send Email <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Call Me</h3>
+                        <p>+1 234 567 890</p>
+                        <a href="tel:+1234567890" class="contact-link">
+                            Call Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Kochi, Kerala, India</p>
+                        <a href="#" class="contact-link">
+                            View Map <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form glass-card">
+                    <h3>Send me a message</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-glass primary full-width">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">Muneef</span>
+                        <div class="logo-dot"></div>
+                    </div>
+                    <p>Creating digital experiences that matter.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Muneef M. Crafted with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
