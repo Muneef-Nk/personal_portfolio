@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <div class="admin-logo">
+                <i class="fas fa-cog"></i>
+                <span>Portfolio Admin</span>
+            </div>
+            <div class="admin-nav-actions">
+                <a href="index.html" class="btn-admin secondary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View Site</span>
+                </a>
+                <button class="btn-admin primary" onclick="exportData()">
+                    <i class="fas fa-download"></i>
+                    <span>Export Data</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-menu">
+                <button class="sidebar-item active" data-section="overview">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Overview</span>
+                </button>
+                <button class="sidebar-item" data-section="personal-info">
+                    <i class="fas fa-user"></i>
+                    <span>Personal Info</span>
+                </button>
+                <button class="sidebar-item" data-section="services">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Services</span>
+                </button>
+                <button class="sidebar-item" data-section="skills">
+                    <i class="fas fa-tools"></i>
+                    <span>Skills</span>
+                </button>
+                <button class="sidebar-item" data-section="projects">
+                    <i class="fas fa-folder"></i>
+                    <span>Projects</span>
+                </button>
+                <button class="sidebar-item" data-section="quotes">
+                    <i class="fas fa-quote-left"></i>
+                    <span>Quotes</span>
+                </button>
+                <button class="sidebar-item" data-section="data-management">
+                    <i class="fas fa-database"></i>
+                    <span>Data Management</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Overview Section -->
+            <section id="overview" class="admin-section active">
+                <div class="section-header">
+                    <h1>Dashboard Overview</h1>
+                    <p>Manage your portfolio content dynamically</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="services-count">0</h3>
+                            <p>Services</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="skills-count">0</h3>
+                            <p>Skills</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="projects-count">0</h3>
+                            <p>Projects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="quotes-count">0</h3>
+                            <p>Quotes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-card" onclick="openPersonalInfoModal()">
+                            <i class="fas fa-user-edit"></i>
+                            <h3>Edit Personal Info</h3>
+                            <p>Update your name, bio, and contact details</p>
+                        </button>
+                        <button class="action-card" onclick="openServiceModal()">
+                            <i class="fas fa-plus-circle"></i>
+                            <h3>Add Service</h3>
+                            <p>Add a new service to your portfolio</p>
+                        </button>
+                        <button class="action-card" onclick="openSkillModal()">
+                            <i class="fas fa-plus-circle"></i>
+                            <h3>Add Skill</h3>
+                            <p>Add a new skill to showcase</p>
+                        </button>
+                        <button class="action-card" onclick="openProjectModal()">
+                            <i class="fas fa-plus-circle"></i>
+                            <h3>Add Project</h3>
+                            <p>Showcase a new project</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Personal Info Section -->
+            <section id="personal-info" class="admin-section">
+                <div class="section-header">
+                    <h1>Personal Information</h1>
+                    <button class="btn-admin primary" onclick="openPersonalInfoModal()">
+                        <i class="fas fa-edit"></i>
+                        <span>Edit Info</span>
+                    </button>
+                </div>
+                <div id="personal-info-preview" class="content-preview">
+                    <!-- Personal info preview will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="admin-section">
+                <div class="section-header">
+                    <h1>Services Management</h1>
+                    <button class="btn-admin primary" onclick="openServiceModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Service</span>
+                    </button>
+                </div>
+                <div id="services-list" class="content-list">
+                    <!-- Services will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="admin-section">
+                <div class="section-header">
+                    <h1>Skills Management</h1>
+                    <div class="section-actions">
+                        <div class="filter-group">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="mobile">Mobile</button>
+                            <button class="filter-btn" data-filter="backend">Backend</button>
+                            <button class="filter-btn" data-filter="design">Design</button>
+                            <button class="filter-btn" data-filter="deployment">Deployment</button>
+                        </div>
+                        <button class="btn-admin primary" onclick="openSkillModal()">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Skill</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="skills-list" class="content-list">
+                    <!-- Skills will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="admin-section">
+                <div class="section-header">
+                    <h1>Projects Management</h1>
+                    <button class="btn-admin primary" onclick="openProjectModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Project</span>
+                    </button>
+                </div>
+                <div id="projects-list" class="content-list">
+                    <!-- Projects will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Quotes Section -->
+            <section id="quotes" class="admin-section">
+                <div class="section-header">
+                    <h1>Quotes Management</h1>
+                    <button class="btn-admin primary" onclick="openQuoteModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Quote</span>
+                    </button>
+                </div>
+                <div id="quotes-list" class="content-list">
+                    <!-- Quotes will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Data Management Section -->
+            <section id="data-management" class="admin-section">
+                <div class="section-header">
+                    <h1>Data Management</h1>
+                    <p>Import, export, and backup your portfolio data</p>
+                </div>
+                
+                <div class="data-actions">
+                    <div class="data-card">
+                        <h3>Export Data</h3>
+                        <p>Download all your portfolio data as a JSON file</p>
+                        <button class="btn-admin primary" onclick="exportData()">
+                            <i class="fas fa-download"></i>
+                            <span>Export All Data</span>
+                        </button>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h3>Import Data</h3>
+                        <p>Upload a JSON file to restore your portfolio data</p>
+                        <input type="file" id="import-file" accept=".json" style="display: none;">
+                        <button class="btn-admin secondary" onclick="document.getElementById('import-file').click()">
+                            <i class="fas fa-upload"></i>
+                            <span>Import Data</span>
+                        </button>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h3>Reset Data</h3>
+                        <p>Clear all data and restore defaults</p>
+                        <button class="btn-admin danger" onclick="resetAllData()">
+                            <i class="fas fa-trash-restore"></i>
+                            <span>Reset to Defaults</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Include all modals from main site -->
+    <!-- Personal Info Modal -->
+    <div id="personal-info-modal" class="modal-overlay">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Edit Personal Information</h2>
+                <button class="modal-close" onclick="closePersonalInfoModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="personal-info-form" class="modal-form">
+                <div class="form-sections">
+                    <div class="form-section">
+                        <h3>Hero Section</h3>
+                        <div class="form-group">
+                            <label for="hero-name">Name</label>
+                            <input type="text" id="hero-name" name="hero-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-role">Role</label>
+                            <input type="text" id="hero-role" name="hero-role" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-description">Description</label>
+                            <textarea id="hero-description" name="hero-description" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-badge">Badge Text</label>
+                            <input type="text" id="hero-badge" name="hero-badge" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>About Section</h3>
+                        <div class="form-group">
+                            <label for="about-title">Title</label>
+                            <input type="text" id="about-title" name="about-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="about-description">Description</label>
+                            <textarea id="about-description" name="about-description" rows="4" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Phone</label>
+                            <input type="tel" id="contact-phone" name="contact-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-location">Location</label>
+                            <input type="text" id="contact-location" name="contact-location" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Social Links</h3>
+                        <div class="form-group">
+                            <label for="social-github">GitHub URL</label>
+                            <input type="url" id="social-github" name="social-github">
+                        </div>
+                        <div class="form-group">
+                            <label for="social-linkedin">LinkedIn URL</label>
+                            <input type="url" id="social-linkedin" name="social-linkedin">
+                        </div>
+                        <div class="form-group">
+                            <label for="social-twitter">Twitter URL</label>
+                            <input type="url" id="social-twitter" name="social-twitter">
+                        </div>
+                        <div class="form-group">
+                            <label for="social-instagram">Instagram URL</label>
+                            <input type="url" id="social-instagram" name="social-instagram">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Footer</h3>
+                        <div class="form-group">
+                            <label for="footer-brand">Brand Text</label>
+                            <input type="text" id="footer-brand" name="footer-brand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-tagline">Tagline</label>
+                            <input type="text" id="footer-tagline" name="footer-tagline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-copyright">Copyright Text</label>
+                            <input type="text" id="footer-copyright" name="footer-copyright" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal secondary" onclick="closePersonalInfoModal()">Cancel</button>
+                    <button type="submit" class="btn-modal primary">
+                        <span>Update Information</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="service-modal-title">Add New Service</h2>
+                <button class="modal-close" onclick="closeServiceModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="service-form" class="modal-form">
+                <div class="form-group">
+                    <label for="service-title">Service Title</label>
+                    <input type="text" id="service-title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-description">Description</label>
+                    <textarea id="service-description" name="description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="service-icon">Icon Class (FontAwesome)</label>
+                    <input type="text" id="service-icon" name="icon" placeholder="fas fa-mobile-alt" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="service-featured" name="featured">
+                        <span class="checkmark"></span>
+                        Featured Service
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal secondary" onclick="closeServiceModal()">Cancel</button>
+                    <button type="submit" class="btn-modal primary">
+                        <span id="service-submit-text">Add Service</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Skill Modal -->
+    <div id="skill-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Skill</h2>
+                <button class="modal-close" onclick="closeSkillModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="skill-form" class="modal-form">
+                <div class="form-group">
+                    <label for="skill-name">Skill Name</label>
+                    <input type="text" id="skill-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="skill-description">Description</label>
+                    <textarea id="skill-description" name="description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="skill-category">Category</label>
+                    <select id="skill-category" name="category" required>
+                        <option value="mobile">Mobile</option>
+                        <option value="backend">Backend</option>
+                        <option value="design">Design</option>
+                        <option value="deployment">Deployment</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="skill-level">Skill Level</label>
+                    <select id="skill-level" name="level" required>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="expert">Expert</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="skill-icon">Icon Class (FontAwesome)</label>
+                    <input type="text" id="skill-icon" name="icon" placeholder="fas fa-mobile-alt" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal secondary" onclick="closeSkillModal()">Cancel</button>
+                    <button type="submit" class="btn-modal primary">
+                        <span id="submit-text">Add Skill</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Project</h2>
+                <button class="modal-close" onclick="closeProjectModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="project-form" class="modal-form">
+                <div class="form-group">
+                    <label for="project-title">Project Title</label>
+                    <input type="text" id="project-title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" name="description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="project-technologies">Technologies (comma-separated)</label>
+                    <input type="text" id="project-technologies" name="technologies" placeholder="React, Node.js, MongoDB" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-demo">Demo URL</label>
+                    <input type="url" id="project-demo" name="demo">
+                </div>
+                <div class="form-group">
+                    <label for="project-code">Code URL</label>
+                    <input type="url" id="project-code" name="code">
+                </div>
+                <div class="form-group">
+                    <label for="project-image">Icon Class (FontAwesome)</label>
+                    <input type="text" id="project-image" name="image" placeholder="fas fa-mobile-alt" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal secondary" onclick="closeProjectModal()">Cancel</button>
+                    <button type="submit" class="btn-modal primary">
+                        <span id="submit-text">Add Project</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="quote-modal-title">Add New Quote</h2>
+                <button class="modal-close" onclick="closeQuoteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="quote-form" class="modal-form">
+                <div class="form-group">
+                    <label for="quote-text">Quote Text</label>
+                    <textarea id="quote-text" name="text" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="quote-author">Author</label>
+                    <input type="text" id="quote-author" name="author" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal secondary" onclick="closeQuoteModal()">Cancel</button>
+                    <button type="submit" class="btn-modal primary">
+                        <span id="quote-submit-text">Add Quote</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/personal-info.js"></script>
+    <script src="assets/js/services.js"></script>
+    <script src="assets/js/skills.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/quotes.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

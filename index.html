@@ -24,26 +24,37 @@
         </div>
     </div>
 
-    <!-- Professional Navigation -->
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">M</span>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <div class="brand-logo">
+                    <span class="brand-initial">M</span>
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-name">Muhammed Muneef</h1>
+                    <p class="brand-title">Mobile App Developer</p>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#projects" class="nav-link">My Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-            </ul>
-            <a href="#contact" class="nav-contact-btn">Contact</a>
-            <div class="nav-toggle">
+            
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-item active">Home</a></li>
+                    <li><a href="#services" class="nav-item">Services</a></li>
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#skills" class="nav-item">Skills</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+            
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -56,30 +67,18 @@
                     <span class="title-greeting">Hi, I'm Muhammed Muneef</span>
                 </h1>
                 <h2 class="hero-role">
-                    <span class="role-highlight">Mobile App</span> Developer
+                    <span class="role-highlight">Mobile App Developer</span>
                 </h2>
                 <p class="hero-description">
-                    Passionate mobile app developer. I create intuitive and visually appealing mobile 
-                    experiences. I transform ideas into seamless apps that meet users' 
-                    expectations.
+                    Passionate mobile app developer creating intuitive and visually appealing 
+                    experiences. I transform ideas into seamless apps that exceed user expectations.
                 </p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn-hero-primary">
-                        <span>My Projects</span>
+                        <span>View My Work</span>
                     </a>
-                    <a href="#" class="btn-hero-secondary">
-                        <span>Download CV</span>
-                    </a>
-                </div>
-                <div class="hero-social">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
+                    <a href="#contact" class="btn-hero-secondary">
+                        <span>Let's Connect</span>
                     </a>
                 </div>
             </div>
@@ -129,34 +128,48 @@
                 <h2 class="section-title">Services</h2>
                 <p class="section-subtitle">Transforming ideas into intuitive digital experiences</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid" id="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile App Development</h3>
-                    <p>Creating native and cross-platform mobile applications with user-friendly interfaces.</p>
+                    <p>Creating native iOS and Android applications with Flutter and React Native frameworks.</p>
                 </div>
                 <div class="service-card featured">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>App Design</h3>
-                    <p>Crafting beautiful interfaces and user experiences for mobile applications.</p>
+                    <h3>Cross-Platform Development</h3>
+                    <p>Building apps that work seamlessly across multiple platforms with shared codebase.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
                     <h3>UI/UX Design</h3>
-                    <p>Building wireframes and prototypes for better design flow.</p>
+                    <p>Designing intuitive user interfaces and engaging user experiences for mobile apps.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-layer-group"></i>
                     </div>
-                    <h3>Prototyping & Wireframing</h3>
-                    <p>Building wireframes and prototypes for better design flow.</p>
+                    <h3>App Prototyping</h3>
+                    <p>Creating interactive prototypes and wireframes for app validation and testing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Backend Integration</h3>
+                    <p>Connecting mobile apps with cloud services, APIs, and database systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>App Store Deployment</h3>
+                    <p>Publishing and optimizing apps for Google Play Store and Apple App Store.</p>
                 </div>
             </div>
         </div>
@@ -169,18 +182,18 @@
                 <span class="section-tag">Inspiration</span>
                 <h2 class="section-title">Words That Drive Me</h2>
             </div>
-            <div class="quote-container">
-                <div class="quote-card glass-intense" id="quote-display">
-                    <p class="quote-text">"The only way to do great work is to love what you do."</p>
-                    <p class="quote-author">- Steve Jobs</p>
-                </div>
-                <div class="quote-navigation">
-                    <button class="quote-nav-btn" id="prev-quote">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="quote-nav-btn" id="next-quote">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+            <div class="quotes-carousel">
+                <div class="quote-display-large">
+                    <div class="quote-content-center">
+                        <div class="quote-mark">"</div>
+                        <p class="quote-text-large">The only way to do great work is to love what you do.</p>
+                        <p class="quote-author-large">— Steve Jobs</p>
+                    </div>
+                    <div class="quote-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -190,11 +203,81 @@
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">What I do</span>
                 <h2 class="section-title">Skills & Expertise</h2>
             </div>
-            <div class="skills-grid" id="skills-grid">
-                <!-- Skills will be added dynamically via JavaScript -->
+            <div class="skills-showcase">
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                    </div>
+                    <span class="skill-name">Flutter</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="iOS">
+                    </div>
+                    <span class="skill-name">iOS</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android">
+                    </div>
+                    <span class="skill-name">Android</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+                    </div>
+                    <span class="skill-name">React Native</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
+                    </div>
+                    <span class="skill-name">Dart</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    </div>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+                    </div>
+                    <span class="skill-name">Firebase</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                    </div>
+                    <span class="skill-name">Figma</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
+                    </div>
+                    <span class="skill-name">Kotlin</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg" alt="Xcode">
+                    </div>
+                    <span class="skill-name">Xcode</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    </div>
+                    <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    </div>
+                    <span class="skill-name">Node.js</span>
+                </div>
             </div>
         </div>
     </section>
@@ -203,82 +286,123 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">My work</span>
                 <h2 class="section-title">Featured Projects</h2>
             </div>
-            <div class="projects-container" id="projects-grid">
-                <!-- Project cards will be added dynamically via JavaScript -->
+            <div class="projects-grid-new">
+                <div class="project-card-new">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Mobile App</h3>
+                        <p class="project-description">A full-featured shopping app with cart, payments, and user authentication built with Flutter.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link github-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="project-link live-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-new">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">Cross-platform productivity app with real-time sync and collaborative features using React Native.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link github-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="project-link live-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-new">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fitness Tracker iOS App</h3>
+                        <p class="project-description">Native iOS health app with workout tracking, nutrition logging, and progress analytics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">iOS</span>
+                            <span class="tech-tag">HealthKit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link github-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="project-link live-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>App Store</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-new">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Learning Management System</h3>
+                        <p class="project-description">Educational platform with course management, video streaming, and progress tracking for students.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Video API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link github-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="project-link live-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Let's work together</span>
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-description">Ready to bring your ideas to life? Let's create something amazing together.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email Me</h3>
-                        <p>md.muneefnk@gmail.com</p>
-                        <a href="mailto:md.muneefnk@gmail.com" class="contact-link">
-                            Send Email <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="contact-card glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Call Me</h3>
-                        <p>+1 234 567 890</p>
-                        <a href="tel:+1234567890" class="contact-link">
-                            Call Now <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="contact-card glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Location</h3>
-                        <p>Kochi, Kerala, India</p>
-                        <a href="#" class="contact-link">
-                            View Map <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <form id="contact-form" class="contact-form glass-card">
-                    <h3>Send me a message</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-glass primary full-width">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
+    <section id="contact" class="contact-simple">
+        <h2>Get In Touch</h2>
+        <div class="contact-simple-content">
+            <i class="fas fa-envelope"></i>
+            <span>md.muneefnk@gmail.com</span>
         </div>
     </section>
 
@@ -293,13 +417,11 @@
                     </div>
                     <p>Creating digital experiences that matter.</p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-social">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -313,7 +435,10 @@
     <div class="cursor-follower"></div>
 
     <script src="script.js"></script>
+    <script src="assets/js/personal-info.js"></script>
+    <script src="assets/js/services.js"></script>
     <script src="assets/js/skills.js"></script>
     <script src="assets/js/projects.js"></script>
+    <script src="assets/js/quotes.js"></script>
 </body>
 </html>
