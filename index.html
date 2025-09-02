@@ -24,36 +24,15 @@
         </div>
     </div>
 
-    <!-- Modern Header -->
-    <header class="modern-header">
-        <div class="header-container">
-            <div class="header-brand">
-                <div class="brand-logo">
-                    <span class="brand-initial">M</span>
-                </div>
-                <div class="brand-text">
-                    <h1 class="brand-name">Muhammed Muneef</h1>
-                    <p class="brand-title">Mobile App Developer</p>
-                </div>
-            </div>
-            
-            <nav class="header-nav">
-                <ul class="nav-list">
-                    <li><a href="#home" class="nav-item active">Home</a></li>
-                    <li><a href="#services" class="nav-item">Services</a></li>
-                    <li><a href="#projects" class="nav-item">Projects</a></li>
-                    <li><a href="#skills" class="nav-item">Skills</a></li>
-                    <li><a href="#contact" class="nav-item">Contact</a></li>
-                </ul>
-            </nav>
-            
-            
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+    <!-- Simple Header -->
+    <header class="simple-header">
+        <nav class="simple-nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -112,11 +91,55 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about-enhanced">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About me</h2>
-                <p class="section-subtitle">Welcome to my portfolio! I'm Muhammed Muneef, a passionate mobile app developer dedicated to creating seamless and visually engaging digital experiences. With 2+ years of experience, I specialize in designing intuitive interfaces that enhance user experience.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="about-description">
+                        <p>Welcome to my portfolio! I'm <strong>Muhammed Muneef</strong>, a passionate mobile app developer dedicated to creating seamless and visually engaging digital experiences.</p>
+                        
+                        <p>With <strong>2+ years of experience</strong> in mobile development, I specialize in building cross-platform applications using Flutter and React Native. My journey began with a fascination for creating apps that solve real-world problems and enhance user experiences.</p>
+                        
+                        <p>I believe in the power of clean code, intuitive design, and continuous learning. My expertise spans across:</p>
+                        
+                        <ul class="expertise-list">
+                            <li><i class="fas fa-check"></i> Native iOS & Android Development</li>
+                            <li><i class="fas fa-check"></i> Cross-platform Solutions with Flutter</li>
+                            <li><i class="fas fa-check"></i> UI/UX Design & Prototyping</li>
+                            <li><i class="fas fa-check"></i> API Integration & Backend Services</li>
+                            <li><i class="fas fa-check"></i> App Store Optimization & Deployment</li>
+                        </ul>
+                        
+                        <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers. I'm always excited to take on new challenges and collaborate on innovative projects.</p>
+                    </div>
+                    
+                    <div class="about-actions">
+                        <a href="#" class="resume-btn" onclick="downloadResume()">
+                            <i class="fas fa-download"></i>
+                            <span>Download Resume</span>
+                        </a>
+                        <a href="#contact" class="contact-btn-about">
+                            <i class="fas fa-envelope"></i>
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -176,24 +199,117 @@
     </section>
 
     <!-- Quotes Section -->
-    <section id="quotes" class="quotes">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Inspiration</span>
-                <h2 class="section-title">Words That Drive Me</h2>
+    <section id="quotes" class="quotes-modern">
+        <div class="quotes-container">
+            <div class="quotes-header">
+                <h2 class="quotes-title">Words That Drive Me</h2>
+                <p class="quotes-subtitle">Inspiration for every developer's journey</p>
             </div>
-            <div class="quotes-carousel">
-                <div class="quote-display-large">
-                    <div class="quote-content-center">
-                        <div class="quote-mark">"</div>
-                        <p class="quote-text-large">The only way to do great work is to love what you do.</p>
-                        <p class="quote-author-large">— Steve Jobs</p>
+            
+            <div class="quotes-slider">
+                <div class="quote-track" id="quote-track">
+                    <div class="quote-slide active">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">The only way to do great work is to love what you do.</p>
+                            <div class="quote-author">Steve Jobs</div>
+                        </div>
                     </div>
-                    <div class="quote-indicators">
-                        <span class="indicator active"></span>
-                        <span class="indicator"></span>
-                        <span class="indicator"></span>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">Code is like humor. When you have to explain it, it's bad.</p>
+                            <div class="quote-author">Cory House</div>
+                        </div>
                     </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">First, solve the problem. Then, write the code.</p>
+                            <div class="quote-author">John Johnson</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">The best error message is the one that never shows up.</p>
+                            <div class="quote-author">Thomas Fuchs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">Experience is the name everyone gives to their mistakes.</p>
+                            <div class="quote-author">Oscar Wilde</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">Innovation distinguishes between a leader and a follower.</p>
+                            <div class="quote-author">Steve Jobs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">The future belongs to those who believe in the beauty of their dreams.</p>
+                            <div class="quote-author">Eleanor Roosevelt</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">Code never lies, comments sometimes do.</p>
+                            <div class="quote-author">Ron Jeffries</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">Simplicity is the ultimate sophistication.</p>
+                            <div class="quote-author">Leonardo da Vinci</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">The only impossible journey is the one you never begin.</p>
+                            <div class="quote-author">Tony Robbins</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-slide">
+                        <div class="quote-content">
+                            <div class="quote-mark">"</div>
+                            <p class="quote-text">Programming isn't about what you know; it's about what you can figure out.</p>
+                            <div class="quote-author">Chris Pine</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-indicators">
+                    <div class="indicator active" data-slide="0"></div>
+                    <div class="indicator" data-slide="1"></div>
+                    <div class="indicator" data-slide="2"></div>
+                    <div class="indicator" data-slide="3"></div>
+                    <div class="indicator" data-slide="4"></div>
+                    <div class="indicator" data-slide="5"></div>
+                    <div class="indicator" data-slide="6"></div>
+                    <div class="indicator" data-slide="7"></div>
+                    <div class="indicator" data-slide="8"></div>
+                    <div class="indicator" data-slide="9"></div>
+                    <div class="indicator" data-slide="10"></div>
+                    <div class="indicator" data-slide="11"></div>
                 </div>
             </div>
         </div>
@@ -398,34 +514,117 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-simple">
-        <h2>Get In Touch</h2>
-        <div class="contact-simple-content">
-            <i class="fas fa-envelope"></i>
-            <span>md.muneefnk@gmail.com</span>
+    <section id="contact" class="contact-beautiful">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2 class="contact-title">Get In Touch</h2>
+                <p class="contact-subtitle">Let's discuss your next project or just say hello. I'm always open to new opportunities and interesting conversations.</p>
+            </div>
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <div class="contact-icon-wrapper">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p class="contact-value">md.muneefnk@gmail.com</p>
+                        <a href="mailto:md.muneefnk@gmail.com" class="contact-link">
+                            <span>Send Message</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon-wrapper">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p class="contact-value">+91 9876543210</p>
+                        <a href="tel:+919876543210" class="contact-link">
+                            <span>Call Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon-wrapper">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p class="contact-value">Kerala, India</p>
+                        <a href="https://maps.google.com/?q=Kerala,India" target="_blank" class="contact-link">
+                            <span>View Map</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-text">Muhammed Muneef M</span>
-                        <div class="logo-dot"></div>
+    <footer class="footer-unique">
+        <div class="footer-bg">
+            <div class="footer-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand-section">
+                    <div class="brand-logo-footer">
+                        <span class="brand-initial-footer">M</span>
                     </div>
-                    <p>Creating digital experiences that matter.</p>
+                    <div class="brand-info">
+                        <h3 class="brand-name-footer">Muhammed Muneef M</h3>
+                        <p class="brand-tagline-footer">Creating digital experiences that matter.</p>
+                    </div>
                 </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <div class="social-links-footer">
+                            <a href="#" class="social-link-footer"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link-footer"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link-footer"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link-footer"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Muhammed Muneef. Crafted with ❤️</p>
+            
+            <div class="footer-bottom-unique">
+                <div class="footer-divider"></div>
+                <div class="footer-copyright">
+                    <p>&copy; <span id="year"></span> Muhammed Muneef. All rights reserved.</p>
+                    <p class="footer-love">Crafted with <i class="fas fa-heart"></i> and lots of coffee</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -435,7 +634,7 @@
     <div class="cursor-follower"></div>
 
     <script src="script.js"></script>
-    <script src="assets/js/personal-info.js"></script>
+    <script src="quotes-slider.js"></script>
     <script src="assets/js/services.js"></script>
     <script src="assets/js/skills.js"></script>
     <script src="assets/js/projects.js"></script>
