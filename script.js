@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Active navigation highlighting
     const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
     
     function updateActiveNav() {
         let current = '';
@@ -48,6 +49,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
+
+    // Skills Category Tabs Functionality
+    function initSkillsTabs() {
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const skillsGrids = document.querySelectorAll('.skills-grid-unique');
+
+        console.log('Found tabs:', categoryTabs.length);
+        console.log('Found grids:', skillsGrids.length);
+
+        if (categoryTabs.length === 0 || skillsGrids.length === 0) {
+            console.log('Skills tabs or grids not found, retrying...');
+            setTimeout(initSkillsTabs, 500);
+            return;
+        }
+
+        categoryTabs.forEach((tab, index) => {
+            console.log('Adding listener to tab:', index, tab.getAttribute('data-category'));
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetCategory = this.getAttribute('data-category');
+                console.log('Tab clicked:', targetCategory);
+                
+                // Remove active class from all tabs
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all skill grids
+                skillsGrids.forEach(grid => {
+                    grid.classList.remove('active');
+                });
+                
+                // Show target skill grid
+                const targetGrid = document.querySelector(`[data-category="${targetCategory}"].skills-grid-unique`);
+                console.log('Target grid found:', targetGrid);
+                if (targetGrid) {
+                    setTimeout(() => {
+                        targetGrid.classList.add('active');
+                        console.log('Grid activated:', targetCategory);
+                    }, 150);
+                }
+            });
+        });
+
+        console.log('Skills tabs initialized successfully');
+    }
+
+    // Initialize skills tabs when DOM is ready
+    setTimeout(initSkillsTabs, 100);
 
     // Typing animation for hero subtitle
     const typingElement = document.querySelector('.typing-text');
