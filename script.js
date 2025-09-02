@@ -233,6 +233,77 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Make downloadResume function global
+    window.downloadResume = function() {
+        // Create a temporary link element
+        const link = document.createElement('a');
+        
+        // For demo purposes, we'll create a simple text file
+        // In a real scenario, you would link to your actual PDF resume
+        const resumeContent = `MUHAMMED MUNEEF
+Mobile App Developer
+
+CONTACT INFORMATION
+Email: muneef@example.com
+Phone: +1 (555) 123-4567
+Location: Your City, Country
+LinkedIn: linkedin.com/in/muneef
+GitHub: github.com/muneef
+
+PROFESSIONAL SUMMARY
+Passionate Mobile App Developer with 2+ years of experience in creating innovative and user-friendly mobile applications. Specialized in cross-platform development using Flutter and React Native, with a strong focus on delivering high-quality solutions that meet both user needs and business objectives.
+
+EXPERIENCE
+
+Mobile App Developer (Freelance) | 2022 - Present
+• Developed 15+ cross-platform mobile applications using Flutter and React Native
+• Built e-commerce mobile apps with payment integration and real-time features
+• Created business productivity apps for various clients with 100% satisfaction rate
+• Implemented push notifications, offline functionality, and performance optimization
+
+Junior Flutter Developer (Tech Startup) | 2021 - 2022
+• Collaborated with UI/UX designers to implement pixel-perfect designs
+• Integrated REST APIs and third-party services for enhanced functionality
+• Participated in code reviews and agile development processes
+• Optimized app performance and reduced loading times by 40%
+
+TECHNICAL SKILLS
+• Mobile Development: Flutter, React Native, Dart, JavaScript
+• Backend: Node.js, Firebase, REST APIs
+• Design: Figma, Adobe XD, UI/UX Principles
+• Tools: Git, VS Code, Android Studio, Xcode
+• Databases: Firebase Firestore, SQLite
+
+EDUCATION
+Bachelor's Degree in Computer Science
+University Name | 2018 - 2022
+
+PROJECTS
+• E-commerce Mobile App: Flutter-based shopping app with payment integration
+• Social Media Platform: React Native app with real-time messaging
+• Task Management App: Cross-platform productivity app with offline sync
+• Weather Forecast App: Location-based weather app with beautiful UI
+
+ACHIEVEMENTS
+• 100% client satisfaction rate across all projects
+• Contributed to open-source Flutter packages
+• Reduced app loading times by 40% through optimization
+• Successfully deployed 15+ apps to Google Play Store and Apple App Store`;
+        
+        const blob = new Blob([resumeContent], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        
+        link.href = url;
+        link.download = 'Muhammed_Muneef_Resume.txt';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        
+        // Show success message
+        showNotification('Resume downloaded successfully!', 'success');
+    };
+
     // Add CSS for notification system
     if (!document.querySelector('#notification-styles')) {
         const notificationStyles = document.createElement('style');
