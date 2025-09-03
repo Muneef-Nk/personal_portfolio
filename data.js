@@ -337,66 +337,72 @@ const websiteData = {
     },
 
     // Featured Projects
-    projects: [
+    featuredProjects: [
         {
             id: 1,
-            title: "Personal Portfolio Website",
-            description: "Modern personal portfolio with glassmorphism design and interactive animations.",
-            image: "fas fa-globe",
-            technologies: ["HTML", "CSS", "JavaScript", "Glassmorphism"],
+            title: "Real Estate Mobile App",
+            description: "Modern property search app with advanced filters, virtual tours, and mortgage calculator built with Flutter.",
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&crop=center",
+            technologies: ["Flutter", "Dart", "Google Maps API"],
             githubUrl: "#",
             liveUrl: "#",
-            featured: true
+            featured: true,
+            category: "Mobile Development"
         },
         {
             id: 2,
             title: "E-Commerce Mobile App",
             description: "A full-featured shopping app with cart, payments, and user authentication built with Flutter.",
-            image: "fas fa-mobile-alt",
+            image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center",
             technologies: ["Flutter", "Dart", "Firebase"],
             githubUrl: "#",
             liveUrl: "#",
-            featured: true
+            featured: true,
+            category: "Mobile Development"
         },
         {
             id: 3,
             title: "Task Management App",
             description: "Cross-platform productivity app with real-time sync and collaborative features using React Native.",
-            image: "fas fa-tasks",
+            image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&crop=center",
             technologies: ["React Native", "JavaScript", "Node.js"],
             githubUrl: "#",
             liveUrl: "#",
-            featured: true
+            featured: true,
+            category: "Cross-Platform"
         },
         {
             id: 4,
             title: "Fitness Tracker iOS App",
             description: "Native iOS health app with workout tracking, nutrition logging, and progress analytics.",
-            image: "fas fa-heartbeat",
+            image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop&crop=center",
             technologies: ["Swift", "iOS", "HealthKit"],
             githubUrl: "#",
             liveUrl: "#",
-            featured: false
+            featured: false,
+            category: "iOS Development"
         },
         {
             id: 5,
             title: "Learning Management System",
             description: "Educational platform with course management, video streaming, and progress tracking for students.",
-            image: "fas fa-graduation-cap",
+            image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=250&fit=crop&crop=center",
             technologies: ["Flutter", "Firebase", "Video API"],
             githubUrl: "#",
             liveUrl: "#",
-            featured: true
+            featured: true,
+            category: "Educational Tech"
         },
         {
             id: 6,
-            title: "jdsfjdsklfjkldsjfkl",
-            description: "Educational platform with course management, video streaming, and progress tracking for students.",
-            image: "fas fa-graduation-cap",
-            technologies: ["Flutter", "Firebase", "Video API"],
+            title: "Social Media Dashboard",
+            description: "Analytics dashboard for social media management with real-time insights and automated reporting.",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center",
+            technologies: ["React", "Node.js", "Chart.js"],
             githubUrl: "#",
             liveUrl: "#",
-            featured: true
+            featured: true,
+            category: "Web Development"
         }
     ],
 

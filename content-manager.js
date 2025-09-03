@@ -179,8 +179,9 @@ class ContentManager {
             projectCard.className = `project-card-new ${project.featured ? 'featured' : ''}`;
             projectCard.innerHTML = `
                 <div class="project-image">
-                    <div class="project-placeholder">
-                        <i class="${project.image}"></i>
+                    <img src="${project.image}" alt="${project.title}" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-category">${project.category}</div>
                     </div>
                 </div>
                 <div class="project-content">
