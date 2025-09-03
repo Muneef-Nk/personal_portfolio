@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Modern navigation handling
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.addEventListener('click', function(e) {
+    // Header navigation handling
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             
-            // Remove active class from all nav items
-            navItems.forEach(nav => nav.classList.remove('active'));
-            // Add active class to clicked item
+            // Remove active class from all nav links
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            // Add active class to clicked link
             this.classList.add('active');
             
             const targetElement = document.querySelector(targetId);
@@ -25,10 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Active navigation highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
     
     function updateActiveNav() {
         let current = '';
