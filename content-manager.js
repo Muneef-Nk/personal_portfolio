@@ -6,7 +6,7 @@ class ContentManager {
     }
 
     init() {
-        this.loadDevelopmentJourney();
+        this.loadMyDevelopmentJourney();
         this.loadServices();
         this.loadQuotes();
         this.loadSkills();
@@ -19,12 +19,12 @@ class ContentManager {
         return [...array].reverse();
     }
 
-    // Load Development Journey (LIFO - newest experiences first)
-    loadDevelopmentJourney() {
+    // Load My Development Journey (LIFO - newest experiences first)
+    loadMyDevelopmentJourney() {
         const container = document.querySelector('.developer-journey-content');
         if (!container) return;
 
-        const journeyData = this.getLIFOArray(this.data.developmentJourney);
+        const journeyData = this.getLIFOArray(this.data.myDevelopmentJourney);
         container.innerHTML = '';
 
         journeyData.forEach((item, index) => {
@@ -71,31 +71,64 @@ class ContentManager {
         });
     }
 
-    // Load Quotes (LIFO - newest quotes first)
+    // Load Quotes (LIFO - newest quotes first, show one at a time)
     loadQuotes() {
-        const container = document.querySelector('.quotes-container');
+        const container = document.querySelector('.quotes-slider');
         if (!container) return;
 
         const quotesData = this.getLIFOArray(this.data.quotes);
-        container.innerHTML = '';
+        
+        // Create header if it doesn't exist
+        let headerContainer = document.querySelector('.quotes-header');
+        if (!headerContainer) {
+            headerContainer = document.createElement('div');
+            headerContainer.className = 'quotes-header';
+            headerContainer.innerHTML = `
+                <h2 class="quotes-title">Words That Drive Me</h2>
+                <p class="quotes-subtitle">Inspiration for every developer's journey</p>
+            `;
+            container.parentNode.insertBefore(headerContainer, container);
+        }
+
+        // Clear and rebuild quote track
+        let quoteTrack = container.querySelector('.quote-track');
+        if (!quoteTrack) {
+            quoteTrack = document.createElement('div');
+            quoteTrack.className = 'quote-track';
+            quoteTrack.id = 'quote-track';
+            container.appendChild(quoteTrack);
+        }
+        quoteTrack.innerHTML = '';
 
         quotesData.forEach((quote, index) => {
-            const quoteCard = document.createElement('div');
-            quoteCard.className = 'quote-card modern-card';
-            quoteCard.setAttribute('data-slide', index);
-            quoteCard.innerHTML = `
+            const quoteSlide = document.createElement('div');
+            quoteSlide.className = `quote-slide ${index === 0 ? 'active' : ''}`;
+            quoteSlide.innerHTML = `
                 <div class="quote-content">
-                    <div class="quote-icon">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <blockquote class="quote-text">"${quote.text}"</blockquote>
-                    <div class="quote-author">
-                        <span class="author-name">— ${quote.author}</span>
-                        <span class="quote-category">${quote.category}</span>
-                    </div>
+                    <div class="quote-mark">"</div>
+                    <p class="quote-text">${quote.text}</p>
+                    <div class="quote-author">${quote.author}</div>
+                    <div class="quote-category">${quote.category}</div>
                 </div>
             `;
-            container.appendChild(quoteCard);
+            quoteTrack.appendChild(quoteSlide);
+        });
+
+        // Create navigation if it doesn't exist
+        let navigation = container.querySelector('.quote-navigation');
+        if (!navigation) {
+            navigation = document.createElement('div');
+            navigation.className = 'quote-navigation';
+            container.appendChild(navigation);
+        }
+        navigation.innerHTML = '';
+
+        // Add navigation dots
+        quotesData.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = `quote-dot ${index === 0 ? 'active' : ''}`;
+            dot.setAttribute('data-slide', index);
+            navigation.appendChild(dot);
         });
 
         // Reinitialize quote slider if it exists
@@ -133,12 +166,12 @@ class ContentManager {
         });
     }
 
-    // Load Projects (LIFO - newest projects first)
-    loadProjects() {
+    // Load Featured Projects (LIFO - newest projects first)
+    loadFeaturedProjects() {
         const container = document.querySelector('.projects-grid-new');
         if (!container) return;
 
-        const projectsData = this.getLIFOArray(this.data.projects);
+        const projectsData = this.getLIFOArray(this.data.featuredProjects);
         container.innerHTML = '';
 
         projectsData.forEach(project => {

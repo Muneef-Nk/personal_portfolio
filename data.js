@@ -2,8 +2,8 @@
 // Note: Arrays are displayed in LIFO (Last In First Out) order - newest items appear first
 
 const websiteData = {
-    // Development Journey Timeline
-    developmentJourney: [
+    // My Development Journey Timeline
+    myDevelopmentJourney: [
         {
             id: 1,
             year: "2020",

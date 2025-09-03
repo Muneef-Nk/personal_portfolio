@@ -2009,14 +2009,30 @@ section {
 }
 
 .tech-tag {
+    display: inline-block;
     background: rgba(212, 70, 239, 0.1);
-    border: 1px solid rgba(212, 70, 239, 0.2);
-    color: #d946ef;
+    color: rgba(212, 70, 239, 0.9);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
+    border: 1px solid rgba(212, 70, 239, 0.2);
+    margin: 0.2rem 0.3rem 0.2rem 0;
     transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.service-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.service-card {
+    overflow: hidden;
 }
 
 .tech-tag:hover {
@@ -3128,8 +3144,9 @@ z-index: 2;
 
 .skills-grid-container {
 position: relative;
-min-height: 400px;
+min-height: 450px;
 width: 100%;
+overflow: visible;
 }
 
 .category-tabs {
@@ -3177,17 +3194,18 @@ font-size: 1.1rem;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 gap: 2rem;
-max-width: 800px;
+max-width: 900px;
 margin: 0 auto;
 opacity: 0;
 visibility: hidden;
 transform: translateY(20px);
 transition: all 0.5s ease;
 position: absolute;
-width: 100%;
+width: calc(100% - 2rem);
 left: 50%;
 transform: translateX(-50%) translateY(20px);
 justify-items: center;
+padding: 0 1rem;
 }
 
 .skills-grid-unique.active {
@@ -3983,6 +4001,21 @@ opacity: 1;
     -webkit-backdrop-filter: blur(50px);
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 30px 100px rgba(0, 0, 0, 0.95);
+}
+
+/* Skills Section Styles */
+.skills {
+    padding: 120px 0;
+    background: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Projects Section Styles */
+.projects-unique {
+    padding: 120px 0;
+    background: var(--bg-dark);
+    position: relative;
 }
 
 /* Quote Section Styles */
